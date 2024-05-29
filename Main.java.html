@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e0957b;}
+.s1 { color: #c9c9d1;}
+.s2 { color: #e0957b; font-weight: bold;}
+.s3 { color: #676773;}
+.s4 { color: #c9c9d1;}
+.s5 { color: #62a362;}
+.s6 { color: #4dacf0;}
+</style>
+</head>
+<body bgcolor="#1d1d26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s3">//Metodo con multiples parametros</span>
+
+    <span class="s0">public static void </span><span class="s1">calculate(</span><span class="s0">int </span><span class="s1">a</span><span class="s2">, </span><span class="s0">int </span><span class="s1">b) {</span>
+        <span class="s0">int </span><span class="s1">sum</span><span class="s4">=</span><span class="s1">a</span><span class="s4">+</span><span class="s1">b</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">product</span><span class="s4">=</span><span class="s1">a</span><span class="s4">*</span><span class="s1">b</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;La suma es: &quot;</span><span class="s4">+</span><span class="s1">sum)</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;El producto es: &quot;</span><span class="s4">+</span><span class="s1">product)</span><span class="s2">;</span>
+    <span class="s1">}</span>
+
+    <span class="s3">//Metodo recursivo para calcular el factorial de uin numero</span>
+
+    <span class="s0">public static int </span><span class="s1">factorial(</span><span class="s0">int </span><span class="s1">n){</span>
+        <span class="s0">if </span><span class="s1">(n</span><span class="s4">==</span><span class="s6">0</span><span class="s1">){</span>
+            <span class="s0">return </span><span class="s6">1</span><span class="s2">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">return </span><span class="s1">n</span><span class="s4">*</span><span class="s1">factorial(n</span><span class="s4">-</span><span class="s6">1</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s3">//Generacion de numeros aleatorios</span>
+
+    <span class="s0">public static int </span><span class="s1">generateRandomNumber(</span><span class="s0">int </span><span class="s1">min</span><span class="s2">, </span><span class="s0">int </span><span class="s1">max){</span>
+        <span class="s1">Random random </span><span class="s4">= </span><span class="s0">new </span><span class="s1">Random()</span><span class="s2">;</span>
+        <span class="s0">return </span><span class="s1">random.nextInt((max </span><span class="s4">- </span><span class="s1">min) </span><span class="s4">+ </span><span class="s6">1</span><span class="s1">) </span><span class="s4">+ </span><span class="s1">min</span><span class="s2">;</span>
+    <span class="s1">}</span>
+
+    <span class="s3">//Juego de probabilidad</span>
+
+    <span class="s0">public static void </span><span class="s1">playGame(){</span>
+        <span class="s1">Scanner scanner </span><span class="s4">= </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">randomNumber </span><span class="s4">= </span><span class="s1">generateRandomNumber(</span><span class="s6">1</span><span class="s2">, </span><span class="s6">100</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;Adivina el numero entre 1 y 100&quot;</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">guess </span><span class="s4">= </span><span class="s1">scanner.nextInt()</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s1">(guess </span><span class="s4">== </span><span class="s1">randomNumber){</span>
+            <span class="s1">System.out.println(</span><span class="s5">&quot;Correcto !Adivinaste el numero&quot;</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s5">&quot;Incorrecto !El numero era: &quot;</span><span class="s4">+ </span><span class="s1">randomNumber)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s3">//Uso de metodos con multiples parametros</span>
+        <span class="s1">calculate(</span><span class="s6">3</span><span class="s2">,</span><span class="s6">7</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s3">// Uso de metodo recursivo</span>
+        <span class="s0">int </span><span class="s1">num</span><span class="s4">=</span><span class="s6">5</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;El factorial de &quot;</span><span class="s4">+</span><span class="s1">num</span><span class="s4">+</span><span class="s5">&quot; es: &quot;</span><span class="s4">+</span><span class="s1">factorial(num))</span><span class="s2">;</span>
+
+        <span class="s3">//Juego de probabilidad</span>
+        <span class="s1">playGame()</span><span class="s2">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
